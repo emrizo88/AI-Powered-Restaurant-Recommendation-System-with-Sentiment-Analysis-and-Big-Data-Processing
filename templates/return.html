@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Restaurant Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Top Restaurant Recommendations</h1>
+        <p>Based on your preferences, here are our top picks:</p>
+
+        {% if recommendations %}
+            <ul class="recommendations-list">
+                {% for restaurant in recommendations %}
+                    <li>
+                        <h2>{{ restaurant.name }}</h2>
+                        <p><strong>Rating:</strong> {{ restaurant.stars }} stars</p>
+                        <p><strong>Distance:</strong> {{ restaurant.distance_km }} km</p>
+                        <p><strong>Score:</strong> {{ restaurant.Final_score | round(2) }} </p>
+
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No recommendations available at this time.</p>
+        {% endif %}
+
+        <a href="/">Go Back to Home</a>
+    </div>
+</body>
+</html>

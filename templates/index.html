@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .scale {
+            display: flex;
+            justify-content: space-between;
+            max-width: 300px;
+        }
+        .scale input[type="radio"] {
+            display: none;
+        }
+        .scale label {
+            cursor: pointer;
+        }
+        .scale input[type="radio"]:checked + label {
+            background-color: #007bff;
+            color: white;
+            border-radius: 50%;
+            padding: 10px;
+        }
+        .scale label {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Feedback Form</h1>
+    <form action="/submit" method="POST">
+
+        <!-- Question 1 -->
+        <div class="question">
+            <label for="question1">How satisfied are you with our service?</label>
+            <div class="scale">
+                <input type="radio" id="q1-1" name="question1" value="1">
+                <label for="q1-1">1</label>
+                <input type="radio" id="q1-2" name="question1" value="2">
+                <label for="q1-2">2</label>
+                <input type="radio" id="q1-3" name="question1" value="3">
+                <label for="q1-3">3</label>
+                <input type="radio" id="q1-4" name="question1" value="4">
+                <label for="q1-4">4</label>
+                <input type="radio" id="q1-5" name="question1" value="5">
+                <label for="q1-5">5</label>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <label for="question2">How likely are you to recommend us to a friend?</label>
+            <div class="scale">
+                <input type="radio" id="q2-1" name="question2" value="1">
+                <label for="q2-1">1</label>
+                <input type="radio" id="q2-2" name="question2" value="2">
+                <label for="q2-2">2</label>
+                <input type="radio" id="q2-3" name="question2" value="3">
+                <label for="q2-3">3</label>
+                <input type="radio" id="q2-4" name="question2" value="4">
+                <label for="q2-4">4</label>
+                <input type="radio" id="q2-5" name="question2" value="5">
+                <label for="q2-5">5</label>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <label for="question3">How would you rate our website?</label>
+            <div class="scale">
+                <input type="radio" id="q3-1" name="question3" value="1">
+                <label for="q3-1">1</label>
+                <input type="radio" id="q3-2" name="question3" value="2">
+                <label for="q3-2">2</label>
+                <input type="radio" id="q3-3" name="question3" value="3">
+                <label for="q3-3">3</label>
+                <input type="radio" id="q3-4" name="question3" value="4">
+                <label for="q3-4">4</label>
+                <input type="radio" id="q3-5" name="question3" value="5">
+                <label for="q3-5">5</label>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <label for="question4">How satisfied are you with our customer service?</label>
+            <div class="scale">
+                <input type="radio" id="q4-1" name="question4" value="1">
+                <label for="q4-1">1</label>
+                <input type="radio" id="q4-2" name="question4" value="2">
+                <label for="q4-2">2</label>
+                <input type="radio" id="q4-3" name="question4" value="3">
+                <label for="q4-3">3</label>
+                <input type="radio" id="q4-4" name="question4" value="4">
+                <label for="q4-4">4</label>
+                <input type="radio" id="q4-5" name="question4" value="5">
+                <label for="q4-5">5</label>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <label for="question5">How would you rate your overall experience?</label>
+            <div class="scale">
+                <input type="radio" id="q5-1" name="question5" value="1">
+                <label for="q5-1">1</label>
+                <input type="radio" id="q5-2" name="question5" value="2">
+                <label for="q5-2">2</label>
+                <input type="radio" id="q5-3" name="question5" value="3">
+                <label for="q5-3">3</label>
+                <input type="radio" id="q5-4" name="question5" value="4">
+                <label for="q5-4">4</label>
+                <input type="radio" id="q5-5" name="question5" value="5">
+                <label for="q5-5">5</label>
+            </div>
+        </div>
+
+        <!-- Multiple Choice Question -->
+        <div class="question">
+            <label for="features">What features would you like to see? (Select all that apply)</label>
+            <div>
+                <input type="checkbox" id="feature1" name="features" value="Feature 1">
+                <label for="feature1">Feature 1</label><br>
+                <input type="checkbox" id="feature2" name="features" value="Feature 2">
+                <label for="feature2">Feature 2</label><br>
+                <input type="checkbox" id="feature3" name="features" value="Feature 3">
+                <label for="feature3">Feature 3</label><br>
+                <input type="checkbox" id="feature4" name="features" value="Feature 4">
+                <label for="feature4">Feature 4</label><br>
+                <input type="checkbox" id="feature5" name="features" value="Feature 5">
+                <label for="feature5">Feature 5</label><br>
+            </div>
+        </div>
+
+        <!-- Yes/No Question -->
+        <div class="question">
+            <label>Would you like to receive email updates?</label>
+            <input type="radio" id="yes" name="email_updates" value="Yes">
+            <label for="yes">Yes</label>
+            <input type="radio" id="no" name="email_updates" value="No">
+            <label for="no">No</label>
+        </div>
+
+        <!-- Latitude and Longitude Inputs -->
+        <div class="question">
+            <label for="latitude">Latitude:</label>
+            <input type="text" id="latitude" name="latitude" required>
+            <label for="longitude">Longitude:</label>
+            <input type="text" id="longitude" name="longitude" required>
+        </div>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+</div>
+
+</body>
+</html>
