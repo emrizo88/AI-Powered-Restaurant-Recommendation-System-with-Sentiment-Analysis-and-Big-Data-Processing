@@ -24,5 +24,5 @@ Techonologies used:
 How to Use:
 1. Clone the repository.
 2. Install required dependencies.
-3. Run the Flask application locally.
+3. Run the Flask application locally (Specifically app2.py).
 4. Access the web interface to input preferences and view recommendations.
